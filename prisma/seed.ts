@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   // create two dummy recipes
-  const user1 = await prisma.gymUser.upsert({
+  const user1 = await prisma.user.upsert({
     where: { email: 'david@example.com' },
     update: {},
     create: {

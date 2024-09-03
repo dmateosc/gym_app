@@ -9,27 +9,27 @@ export class UserPrismaRepository implements UserRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createUserDto: CreateUserDto) {
-    return await this.prisma.gymUser.create({
+    return await this.prisma.user.create({
       data: createUserDto,
     });
   }
 
   findAll() {
-    return this.prisma.gymUser.findMany();
+    return this.prisma.user.findMany();
   }
 
   findOne(id: string) {
-    return this.prisma.gymUser.findUnique({ where: { userId: id } });
+    return this.prisma.user.findUnique({ where: { userId: id } });
   }
 
   update(id: string, updateUserDto: UpdateUserDto) {
-    return this.prisma.gymUser.update({
+    return this.prisma.user.update({
       where: { userId: id },
       data: updateUserDto,
     });
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return `This action removes a #${id} user`;
   }
 }

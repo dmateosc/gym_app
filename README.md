@@ -112,7 +112,7 @@ datasource db {
 }
 
 
-model GymUser {
+model user {
   userId         String   @id @default(uuid()) @unique
   dni            String
   name           String

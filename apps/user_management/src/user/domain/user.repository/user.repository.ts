@@ -10,7 +10,7 @@ export interface UserRepository {
 
   update(id: string, updateUserDto: UpdateUserDto);
 
-  remove(id: number);
+  remove(id: string);
 }
 
 export const UserRepository = Symbol('UserRepository');
