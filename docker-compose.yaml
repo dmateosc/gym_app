@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_USER: gym
       POSTGRES_PASSWORD: gymPassword
-      POSTGRES_DB: gym
+      POSTGRES_MULTIPLE_DB: gym, test
     volumes:
       - ./data:/var/lib/postgresql/data
     ports:

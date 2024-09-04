@@ -1,18 +1,20 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: (configService: ConfigService) => ({
-        type: configService.get('type'),
-        url: configService.get<string>('DATABASE_URL'),
-        synchronize: configService.get<boolean>('synchronize'),
-        autoLoadEntities: configService.get<boolean>('autoLoadEntities'),
-      }),
+      useFactory: async (configService: ConfigService) =>
+        ({
+          type: configService.get('type') as any,
+          url: configService.get('DATABASE_URL', 'sqlite::memory:'),
+          database: configService.get('database'),
+          synchronize: Boolean(configService.get('synchronize')),
+          autoLoadEntities: Boolean(configService.get('autoLoadEntities')),
+        }) as TypeOrmModuleOptions,
     }),
   ],
   providers: [],
