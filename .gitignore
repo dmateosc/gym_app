@@ -4,6 +4,9 @@ node_modules/
 build/
 tmp/
 temp/
-gym_app/prisma/migrations
+prisma/migrations
+prisma/migrations/*
 apps/user_management/src/user/test/test.sqlite
 data/*
+data/base
+.env
