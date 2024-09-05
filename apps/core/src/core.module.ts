@@ -1,10 +1,11 @@
-import { Module } from '@nestjs/common';
-import { CoreController } from './core.controller';
-import { CoreService } from './core.service';
+import { Global, Module } from '@nestjs/common';
+import { UserModule } from 'apps/user_management/user/user.module';
+import { ErrorService } from './error/error.service';
 
+@Global()
 @Module({
-  imports: [],
-  controllers: [CoreController],
-  providers: [CoreService],
+  imports: [UserModule],
+  controllers: [],
+  providers: [ErrorService],
 })
 export class CoreModule {}
