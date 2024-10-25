@@ -28,6 +28,5 @@ import { UserTypeormRepository } from './infrastructure/user.typeorm.repository/
       inject: [ConfigService, UserTypeormRepository, UserPrismaRepository],
     },
   ],
-  exports: [UserRepository],
 })
 export class UserModule {}

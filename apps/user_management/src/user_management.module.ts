@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { UserModule } from '@user_management/user/user.module';
+import { UserModule } from '@user_management/src/user/user.module';
 import { MessagingUserModule } from './messaging_user/messaging_user.module';
 
 @Module({

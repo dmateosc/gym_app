@@ -91,7 +91,7 @@
       "^@app/prisma(|/.*)$": "<rootDir>/libs/prisma/src/$1",
       "^@app/typeorm(|/.*)$": "<rootDir>/libs/typeorm/src/$1",
       "^@app/messaging(|/.*)$": "<rootDir>/libs/messaging/src/$1",
-      "^@user_management(|/.*)$": "<rootDir>/user_management/$1"
+      "^@user_management(|/.*)$": "<rootDir>/user_management/src/$1"
     }
   },
   "prisma": {

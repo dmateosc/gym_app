@@ -21,6 +21,6 @@ temp/
 prisma/migrations
 prisma/migrations/*
 apps/user_management/src/user/test/test.sqlite
-data/*
-data/base
+/data
+/data/*
 .env
